@@ -21,5 +21,5 @@ public enum NombreValor {
 		this.valor = valor;		
 	}
 	
-	private int getValor() {return valor;}
+	public int getValor() {return valor;}
 }

@@ -1,25 +1,42 @@
 package cr.ac.cenfotec.Examen;
 
 public class Carta {
-	private NombreValor NombreValor;
-	private String Palo;
+	private NombreValor nombreValor;
+	private Palo palo;
 	
 	public Carta() {}
 
+	
+
 	public NombreValor getNombreValor() {
-		return NombreValor;
+		return nombreValor;
 	}
 
 	public void setNombreValor(NombreValor nombreValor) {
-		NombreValor = nombreValor;
+		this.nombreValor = nombreValor;
 	}
 
-	public String getPalo() {
-		return Palo;
+	public Palo getPalo() {
+		return palo;
 	}
 
-	public void setPalo(String palo) {
-		Palo = palo;
+	public void setPalo(Palo palo) {
+		this.palo = palo;
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null)
+			return false;
+		if(!(o instanceof Carta))
+			return false;
+		
+		Carta carta = (Carta) o;
+		
+		return nombreValor.getValor() == carta.nombreValor.getValor();
+	}
+	
 	
 }
