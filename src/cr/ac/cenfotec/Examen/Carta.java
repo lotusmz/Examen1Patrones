@@ -15,16 +15,8 @@ public class Carta {
 		return nombreValor;
 	}
 
-	public void setNombreValor(NombreValor nombreValor) {
-		this.nombreValor = nombreValor;
-	}
-
 	public Palo getPalo() {
 		return palo;
-	}
-
-	public void setPalo(Palo palo) {
-		this.palo = palo;
 	}
 
 	@Override

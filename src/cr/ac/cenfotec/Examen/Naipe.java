@@ -20,5 +20,13 @@ public class Naipe {
 			}
 
 	}
+
+	public Carta[] getCartas() {
+		return cartas;
+	}
+
+	public void setCartas(Carta[] cartas) {
+		this.cartas = cartas;
+	}
 	
 }
