@@ -5,8 +5,11 @@ public class Carta {
 	private Palo palo;
 	
 	public Carta() {}
-
-	
+		
+	public Carta(NombreValor nombreValor, Palo palo) {
+		this.nombreValor = nombreValor;
+		this.palo = palo;
+	}
 
 	public NombreValor getNombreValor() {
 		return nombreValor;
