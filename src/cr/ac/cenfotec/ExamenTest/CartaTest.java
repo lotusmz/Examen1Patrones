@@ -5,14 +5,21 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import cr.ac.cenfotec.Examen.Carta;
+import cr.ac.cenfotec.Examen.NombreValor;
+import cr.ac.cenfotec.Examen.Palo;
 
 public class CartaTest {
 	
-	Carta nuevaCarta = new Carta();
+	Carta cartaI = new Carta();
+	Carta cartaII= new Carta();
 	
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testEquals() {
+		
+		Carta nuevaCarta = new Carta(NombreValor.AS, Palo.ESCUDOS);
+		Carta nuevaCartaII = new Carta(NombreValor.AS, Palo.ESTRELLAS);
+		
+		assertEquals(true, nuevaCarta.equals(nuevaCartaII));
 	}
 
 }
