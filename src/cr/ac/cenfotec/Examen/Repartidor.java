@@ -7,9 +7,11 @@ public class Repartidor {
 	
 	private Naipe nuevoNaipe;
 		
-	public Repartidor(Naipe nuevoNaipe) {
+	public Repartidor() {
 		
-		this.nuevoNaipe = shuffleNaipe(nuevoNaipe);
+		//this.nuevoNaipe = shuffleNaipe(nuevoNaipe);
+		
+		nuevoNaipe = new Naipe();
 	}
 
 	public Naipe getNuevoNaipe() {
@@ -20,12 +22,13 @@ public class Repartidor {
 		this.nuevoNaipe = nuevoNaipe;
 	}
 
-	static Naipe shuffleNaipe(Naipe nuevoNaipe)
+	/* static Naipe shuffleNaipe(Naipe nuevoNaipe)
 	  {
 		
 		Carta[] cartas = nuevoNaipe.getCartas();
 		
 	    Random rnd = ThreadLocalRandom.current();
+	    
 	    for (int i = cartas.length - 1; i > 0; i--)
 	    {
 	      int index = rnd.nextInt(i + 1);
@@ -38,6 +41,6 @@ public class Repartidor {
 	    nuevoNaipe.setCartas(cartas);
 	    
 	    return nuevoNaipe;
-	  }
+	  }*/
 	
 }

@@ -5,10 +5,20 @@ public class Jugador {
 	private String nombre;
 	private Carta[] mano;
 
-	public Jugador(String nombre, Carta[] mano) {
+	public Jugador(String nombre) {
 
 		this.nombre = nombre;
+
+	}
+
+	public Jugador(Carta[] mano) {
+
 		this.mano = mano;
+
+	}
+	
+	public Jugador() {
+
 	}
 
 	public String getNombre() {

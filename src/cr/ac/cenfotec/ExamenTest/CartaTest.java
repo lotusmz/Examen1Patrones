@@ -14,12 +14,21 @@ public class CartaTest {
 	Carta cartaII= new Carta();
 	
 	@Test
-	public void testEquals() {
+	public void testIgualdad() {
 		
 		Carta nuevaCarta = new Carta(NombreValor.AS, Palo.ESCUDOS);
 		Carta nuevaCartaII = new Carta(NombreValor.AS, Palo.ESTRELLAS);
 		
 		assertEquals(true, nuevaCarta.equals(nuevaCartaII));
+	}
+	
+	@Test
+	public void testDiferencia() {
+		
+		Carta nuevaCarta = new Carta(NombreValor.CINCO, Palo.ESCUDOS);
+		Carta nuevaCartaII = new Carta(NombreValor.AS, Palo.ESTRELLAS);
+		
+		assertEquals(false, nuevaCarta.equals(nuevaCartaII));
 	}
 
 }
