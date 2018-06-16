@@ -30,5 +30,7 @@ public class CartaTest {
 		
 		assertEquals(false, nuevaCarta.equals(nuevaCartaII));
 	}
+	
+	
 
 }

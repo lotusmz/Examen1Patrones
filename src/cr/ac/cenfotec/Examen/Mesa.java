@@ -31,5 +31,9 @@ public class Mesa {
 	public ArrayList<Jugador> getJugadores() {
 		return jugadores;
 	}
+
+	public Repartidor getRepartidor() {
+		return repartidor;
+	}
 	
 }

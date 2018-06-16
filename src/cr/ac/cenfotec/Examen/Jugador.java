@@ -1,9 +1,11 @@
 package cr.ac.cenfotec.Examen;
 
+import java.util.ArrayList;
+
 public class Jugador {
 	
 	private String nombre;
-	private Carta[] mano;
+	private ArrayList<Carta> mano;
 
 	public Jugador(String nombre) {
 
@@ -11,14 +13,17 @@ public class Jugador {
 
 	}
 
-	public Jugador(Carta[] mano) {
-
-		this.mano = mano;
-
-	}
-	
 	public Jugador() {
 
+	}
+
+	
+	public ArrayList<Carta> getMano() {
+		return mano;
+	}
+
+	public void setMano(ArrayList<Carta> mano) {
+		this.mano = mano;
 	}
 
 	public String getNombre() {
@@ -29,12 +34,6 @@ public class Jugador {
 		this.nombre = nombre;
 	}
 
-	public Carta[] getMano() {
-		return mano;
-	}
-
-	public void setMano(Carta[] mano) {
-		this.mano = mano;
-	}
+	
 	
 }

@@ -1,32 +1,33 @@
 package cr.ac.cenfotec.Examen;
 
+import java.util.ArrayList;
+
 public class Naipe {
 	
-	private Carta[] cartas;
+	private ArrayList<Carta> cartas;
 	
 	public Naipe() {
-			
-			int i = 0;
-			cartas = new Carta[52];
-			
+						
+			cartas = new ArrayList<Carta>();
+		
 			for(Palo palo : Palo.values()) {
 			
 				for (NombreValor carta : NombreValor.values()) {
 					
-					this.cartas[i] = new Carta(carta, palo); 
-					i++;
-					
+					cartas.add(new Carta(carta, palo)); 
+										
 				}
 			}
 
 	}
 
-	public Carta[] getCartas() {
+	public ArrayList<Carta> getCartas() {
 		return cartas;
 	}
 
-	public void setCartas(Carta[] cartas) {
+	public void setCartas(ArrayList<Carta> cartas) {
 		this.cartas = cartas;
 	}
+
 	
 }

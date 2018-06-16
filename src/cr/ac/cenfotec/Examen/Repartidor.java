@@ -1,7 +1,7 @@
 package cr.ac.cenfotec.Examen;
 
+import java.util.ArrayList;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Repartidor {
 	
@@ -9,38 +9,36 @@ public class Repartidor {
 		
 	public Repartidor() {
 		
-		//this.nuevoNaipe = shuffleNaipe(nuevoNaipe);
-		
 		nuevoNaipe = new Naipe();
+		ArrayList<Carta> deck = nuevoNaipe.getCartas();
+		nuevoNaipe = shuffleNaipe(deck);
+		
 	}
 
 	public Naipe getNuevoNaipe() {
 		return nuevoNaipe;
 	}
-
-	public void setNuevoNaipe(Naipe nuevoNaipe) {
-		this.nuevoNaipe = nuevoNaipe;
+	
+	public void darCarta(Jugador jugador) {
+		
+		jugador.getMano().add(nuevoNaipe.getCartas().remove(0));
 	}
 
-	/* static Naipe shuffleNaipe(Naipe nuevoNaipe)
-	  {
-		
-		Carta[] cartas = nuevoNaipe.getCartas();
-		
-	    Random rnd = ThreadLocalRandom.current();
-	    
-	    for (int i = cartas.length - 1; i > 0; i--)
-	    {
-	      int index = rnd.nextInt(i + 1);
-
-	      Carta a = cartas[index];
-	      cartas[index] = cartas[i];
-	      cartas[i] = a;
-	    }
-	    
-	    nuevoNaipe.setCartas(cartas);
-	    
-	    return nuevoNaipe;
-	  }*/
 	
+	public Naipe shuffleNaipe(ArrayList<Carta> deck){
+		Naipe naipeBarajado = new Naipe();
+		ArrayList<Carta> shuffledDeck = new ArrayList<Carta>();
+		
+		int r = 0;
+		while (deck.size() > 0){
+			Random carta = new Random();
+			r = carta.nextInt(deck.size());
+			Carta temp = deck.remove(r);
+			shuffledDeck.add(temp);
+		}
+		
+		naipeBarajado.setCartas(shuffledDeck);
+		
+		return naipeBarajado;
+	}
 }

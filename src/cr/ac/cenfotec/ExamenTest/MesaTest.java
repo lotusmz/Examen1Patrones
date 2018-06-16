@@ -9,12 +9,9 @@ import org.junit.Test;
 import cr.ac.cenfotec.Examen.Carta;
 import cr.ac.cenfotec.Examen.Jugador;
 import cr.ac.cenfotec.Examen.Mesa;
-import cr.ac.cenfotec.Examen.NombreValor;
-import cr.ac.cenfotec.Examen.Palo;
 
 public class MesaTest {
 	
-	Carta[] mano;
 	String nombre;
 	Mesa nuevaMesa;
 	Jugador nuevoJugador;
@@ -56,5 +53,7 @@ public class MesaTest {
 		
 		assertEquals(5, jugador.size());
 	}
+	
+	
 
 }
