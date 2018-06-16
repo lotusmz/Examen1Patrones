@@ -27,6 +27,18 @@ public class Mesa {
 		}
 		
 	}
+	
+	public void empezarAJugar21() {
+		Jugador jugadorADarCarta = new Jugador();
+		
+		for(int i=0;i<jugadores.size();i++) {
+					
+			jugadorADarCarta = jugadores.get(i);
+			repartidor.darCarta(jugadorADarCarta);
+						
+		}	
+	
+	}
 
 	public ArrayList<Jugador> getJugadores() {
 		return jugadores;

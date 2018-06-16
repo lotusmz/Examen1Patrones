@@ -54,6 +54,19 @@ public class MesaTest {
 		assertEquals(5, jugador.size());
 	}
 	
-	
+	@Test
+	public void testEmpezarAJugar21() throws Exception {
+		nombre = "Mary Paz";
+		nuevoJugador = new Jugador(nombre);
+		nuevaMesa = new Mesa();
+		ArrayList<Jugador> jugador = nuevaMesa.getJugadores();
+		nuevaMesa.agregarJugadores(nuevoJugador);
+		nuevaMesa.agregarJugadores(nuevoJugador);
+		
+		assertEquals(2, jugador.size());
+		nuevaMesa.empezarAJugar21();
+		assertEquals(2, jugador.get(0).getMano().size());
+		
+	}
 
 }
