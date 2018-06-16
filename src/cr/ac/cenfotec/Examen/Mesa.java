@@ -31,15 +31,26 @@ public class Mesa {
 	public void empezarAJugar21() {
 		Jugador jugadorADarCarta = new Jugador();
 		
-		for(int i=0;i<jugadores.size();i++) {
-					
-			jugadorADarCarta = jugadores.get(i);
-			repartidor.darCarta(jugadorADarCarta);
-						
-		}	
-	
+		for(int c=0;c<2;c++) {
+			for(int i=0;i<jugadores.size();i++) {
+				
+				jugadorADarCarta = jugadores.get(i);
+				repartidor.darCarta(jugadorADarCarta);
+							
+			}
+		}				
 	}
-
+	
+	public Jugador obtenerGanador() {
+		Jugador ganador = new Jugador();
+		ArrayList<Carta> mano = new ArrayList<Carta>();
+		
+		for (int i=0;i<jugadores.size();i++) {}
+		
+		return ganador;
+		
+	}
+	
 	public ArrayList<Jugador> getJugadores() {
 		return jugadores;
 	}

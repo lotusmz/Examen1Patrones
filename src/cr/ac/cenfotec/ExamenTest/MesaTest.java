@@ -12,9 +12,9 @@ import cr.ac.cenfotec.Examen.Mesa;
 
 public class MesaTest {
 	
-	String nombre;
-	Mesa nuevaMesa;
-	Jugador nuevoJugador;
+	String nombre = "Mary Paz";
+	Mesa nuevaMesa = new Mesa();
+	Jugador nuevoJugador = new Jugador(nombre);
 	
 	@Test
 	public void testMesaIniciaSinJugadores() throws Exception {
@@ -27,9 +27,7 @@ public class MesaTest {
 	
 	@Test
 	public void testAgregarJugador() throws Exception {
-		nombre = "Mary Paz";
-		nuevoJugador = new Jugador(nombre);
-		nuevaMesa = new Mesa();
+
 		ArrayList<Jugador> jugador = nuevaMesa.getJugadores();
 		
 		nuevaMesa.agregarJugadores(nuevoJugador);
@@ -38,9 +36,6 @@ public class MesaTest {
 	
 	@Test(expected=Exception.class)
 	public void testErrorMesaLlena() throws Exception {
-		nombre = "Mary Paz";
-		nuevoJugador = new Jugador(nombre);
-		nuevaMesa = new Mesa();
 		ArrayList<Jugador> jugador = nuevaMesa.getJugadores();
 		
 		for(int i=0;i<4;i++){
@@ -56,14 +51,14 @@ public class MesaTest {
 	
 	@Test
 	public void testEmpezarAJugar21() throws Exception {
-		nombre = "Mary Paz";
-		nuevoJugador = new Jugador(nombre);
-		nuevaMesa = new Mesa();
+		Jugador nuevoJugadorII = new Jugador("Alonso");
+		Jugador nuevoJugadorIII = new Jugador("Pedro");
 		ArrayList<Jugador> jugador = nuevaMesa.getJugadores();
 		nuevaMesa.agregarJugadores(nuevoJugador);
-		nuevaMesa.agregarJugadores(nuevoJugador);
+		nuevaMesa.agregarJugadores(nuevoJugadorII);
+		nuevaMesa.agregarJugadores(nuevoJugadorIII);
 		
-		assertEquals(2, jugador.size());
+		assertEquals(3, jugador.size());
 		nuevaMesa.empezarAJugar21();
 		assertEquals(2, jugador.get(0).getMano().size());
 		
