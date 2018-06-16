@@ -28,9 +28,13 @@ public class RepartidorTest {
 		
 		nuevaMesa.agregarJugadores(jugadorEnMesa);
 		nuevoRepartidor = nuevaMesa.getRepartidor();
-		
 		nuevoRepartidor.darCarta(jugadorEnMesa);
 		
+		//Comprueba que en efecto el jugador tenga una carta
 		assertNotNull(jugadorEnMesa.getMano());
+		
+		//Verifica que se haya restado una carta al naipe
+		assertEquals(51, nuevoRepartidor.getNuevoNaipe().getCartas().size());
 	}
+
 }
