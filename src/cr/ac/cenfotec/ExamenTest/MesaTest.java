@@ -103,5 +103,27 @@ public class MesaTest {
 		assertTrue(mesaNueva.obtenerGanador().contains(jugadorII));
 		assertTrue(mesaNueva.obtenerGanador().contains(jugadorIII));
 	}
+	
+	@Test
+	public void testNadieGana() throws Exception {
+		ArrayList<Carta> manoNueva = new ArrayList<Carta>();
+		ArrayList<Carta> manoNuevaII = new ArrayList<Carta>();
+		Jugador jugadorII = new Jugador("Pablo");
+		Jugador jugadorIII = new Jugador("Marmol");
+		Mesa mesaNueva = new Mesa();
+		
+		manoNueva.add(new Carta(NombreValor.DIEZ, Palo.ESTRELLAS));
+		manoNueva.add(new Carta(NombreValor.DIEZ, Palo.ESCUDOS));
+		manoNueva.add(new Carta(NombreValor.DOS, Palo.ESCUDOS));
+		manoNuevaII.add(new Carta(NombreValor.DIEZ, Palo.FLORES));
+		manoNuevaII.add(new Carta(NombreValor.DIEZ, Palo.ESTRELLAS));
+		manoNuevaII.add(new Carta(NombreValor.DOS, Palo.ESTRELLAS));
+		jugadorII.setMano(manoNueva);
+		jugadorIII.setMano(manoNuevaII);
+		mesaNueva.agregarJugadores(jugadorII);
+		mesaNueva.agregarJugadores(jugadorIII);
+		
+		assertTrue(mesaNueva.obtenerGanador().isEmpty());
+	}
 
 }

@@ -42,7 +42,7 @@ public class Jugador {
 			}
 		return valor;
 	}
-	
+			
 	@Override
 	public boolean equals(Object o) {
 	    return this == o;

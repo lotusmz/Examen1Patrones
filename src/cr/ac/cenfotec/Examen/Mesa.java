@@ -49,11 +49,15 @@ public class Mesa {
 		
 		for (int i=0;i<jugadores.size();i++) {
 			
-			manoJugador = jugadores.get(i).calcularValorMano();
+			manoJugador = 21 - jugadores.get(i).calcularValorMano();
 
 			if(manoJugador < manoGanadora && manoJugador >= 0){
+				
+				manoGanadora = manoJugador;
+				
 				ganador = new ArrayList<Jugador>();
 				ganador.add(jugadores.get(i));
+			
 			}else if(manoJugador == manoGanadora){
 				ganador.add(jugadores.get(i));
 			}
@@ -62,6 +66,19 @@ public class Mesa {
 		
 		return ganador;
 		
+	}
+	
+	public boolean verificarCambio(Jugador jugador) {
+		
+		ArrayList<Carta> mano = jugador.getMano();
+		
+		for(int m=0;m<mano.size();m++) {
+			
+			
+			
+		}
+		
+		return true;
 	}
 	
 	public ArrayList<Jugador> getJugadores() {
