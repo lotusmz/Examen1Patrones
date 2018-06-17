@@ -41,4 +41,10 @@ public class Repartidor {
 		
 		return naipeBarajado;
 	}
+
+	public void setNuevoNaipe(Naipe nuevoNaipe) {
+		this.nuevoNaipe = nuevoNaipe;
+	}
+
+	
 }

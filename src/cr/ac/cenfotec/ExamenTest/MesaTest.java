@@ -234,7 +234,7 @@ public class MesaTest {
 	}
 	
 	@Test
-	public void empezarPartidaDeRon() throws Exception {
+	public void testEmpezarPartidaDeRon() throws Exception {
 
 		nuevaMesa.agregarJugadores(new Jugador("Alonso"));
 		nuevaMesa.agregarJugadores(new Jugador("Pedro"));
@@ -243,6 +243,15 @@ public class MesaTest {
 		nuevaMesa.empezarPartidaDeRon();
 		assertEquals(7, jugador.get(0).getMano().size());
 		assertEquals(38, nuevaMesa.getDeck().size());
+
+	}
+	
+	@Test
+	public void testReset() throws Exception {
+		
+		nuevaMesa.reset();
+		assertEquals(null, nuevaMesa.getDeck());
+		assertEquals(52, nuevaMesa.getRepartidor().getNuevoNaipe().getCartas().size());
 
 	}
 }

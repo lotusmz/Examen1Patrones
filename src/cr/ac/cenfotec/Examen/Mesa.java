@@ -59,6 +59,7 @@ public class Mesa {
 		deck = repartidor.getNuevoNaipe().getCartas();
 	}
 	
+	
 	public ArrayList<Jugador> obtenerGanador() {
 		ArrayList<Jugador> ganador = new ArrayList<Jugador>();
 		int manoJugador = 0;
@@ -106,6 +107,12 @@ public class Mesa {
 		}
 		
 		return cartasCambiadas;
+	}
+	
+	public void reset() {
+		repartidor.setNuevoNaipe(new Naipe());
+		this.deck = null;
+		jugadores = new ArrayList<Jugador>();
 	}
 	
 	public ArrayList<Jugador> getJugadores() {
