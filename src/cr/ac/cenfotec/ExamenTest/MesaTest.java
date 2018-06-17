@@ -242,6 +242,7 @@ public class MesaTest {
 		assertEquals(2, jugador.size());
 		nuevaMesa.empezarPartidaDeRon();
 		assertEquals(7, jugador.get(0).getMano().size());
-		
+		assertEquals(38, nuevaMesa.getDeck().size());
+
 	}
 }

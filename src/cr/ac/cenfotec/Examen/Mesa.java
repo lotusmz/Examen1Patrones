@@ -7,6 +7,7 @@ public class Mesa {
 	
 	private Repartidor repartidor;
 	private ArrayList<Jugador> jugadores;
+	private ArrayList<Carta> deck;
 	
 	public Mesa() {
 		
@@ -39,7 +40,8 @@ public class Mesa {
 				repartidor.darCarta(jugadorADarCarta);
 							
 			}
-		}				
+		}
+		
 	}
 	
 	public void empezarPartidaDeRon() {
@@ -52,7 +54,9 @@ public class Mesa {
 				repartidor.darCarta(jugadorADarCarta);
 							
 			}
-		}				
+		}
+		
+		deck = repartidor.getNuevoNaipe().getCartas();
 	}
 	
 	public ArrayList<Jugador> obtenerGanador() {
@@ -111,5 +115,10 @@ public class Mesa {
 	public Repartidor getRepartidor() {
 		return repartidor;
 	}
+
+	public ArrayList<Carta> getDeck() {
+		return deck;
+	}
+
 	
 }
