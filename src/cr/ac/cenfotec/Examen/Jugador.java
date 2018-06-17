@@ -42,14 +42,13 @@ public class Jugador {
 		Carta comodin = new Carta(NombreValor.CINCO, Palo.FLORES);
 		
 		for(int i=0;i<mano.size();i++) {
-			
-			if(mano.size() > 2) 
+
+			if(mano.get(i).getNombreValor() == comodin.getNombreValor())
+			{
+				return valor = 21;
+				
+			}else if(mano.size() > 2) 
 			{	
-				if(mano.get(i).getNombreValor() == comodin.getNombreValor())
-				{
-					valor = 21;
-					break;
-				}
 				
 				valor += mano.get(i).getNombreValor().getValor();
 				

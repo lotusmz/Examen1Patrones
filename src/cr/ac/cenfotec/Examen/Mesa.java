@@ -42,6 +42,19 @@ public class Mesa {
 		}				
 	}
 	
+	public void empezarPartidaDeRon() {
+		Jugador jugadorADarCarta = new Jugador();
+		
+		for(int c=0;c<7;c++) {
+			for(int i=0;i<jugadores.size();i++) {
+				
+				jugadorADarCarta = jugadores.get(i);
+				repartidor.darCarta(jugadorADarCarta);
+							
+			}
+		}				
+	}
+	
 	public ArrayList<Jugador> obtenerGanador() {
 		ArrayList<Jugador> ganador = new ArrayList<Jugador>();
 		int manoJugador = 0;

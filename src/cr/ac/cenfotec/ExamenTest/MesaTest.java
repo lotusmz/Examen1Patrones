@@ -222,7 +222,7 @@ public class MesaTest {
 
 		mano.add(new Carta(NombreValor.CINCO, Palo.ESTRELLAS));
 		mano.add(new Carta(NombreValor.DOS, Palo.ESCUDOS));
-		manoII.add(new Carta(NombreValor.DIEZ, Palo.FLORES));
+		manoII.add(new Carta(NombreValor.CINCO, Palo.FLORES));
 		manoII.add(new Carta(NombreValor.DIEZ, Palo.ESTRELLAS));
 		nuevoJugadorII.setMano(mano);
 		nuevoJugadorIII.setMano(manoII);
@@ -231,5 +231,17 @@ public class MesaTest {
 		
 		assertTrue(nuevaMesa.obtenerGanador().contains(nuevoJugadorII));
 
+	}
+	
+	@Test
+	public void empezarPartidaDeRon() throws Exception {
+
+		nuevaMesa.agregarJugadores(new Jugador("Alonso"));
+		nuevaMesa.agregarJugadores(new Jugador("Pedro"));
+		
+		assertEquals(2, jugador.size());
+		nuevaMesa.empezarPartidaDeRon();
+		assertEquals(7, jugador.get(0).getMano().size());
+		
 	}
 }
