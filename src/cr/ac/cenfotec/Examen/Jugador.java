@@ -39,11 +39,18 @@ public class Jugador {
 		int valor = 0;
 		Carta diez = new Carta(NombreValor.DIEZ,Palo.FLORES);
 		Carta dos = new Carta(NombreValor.DOS, Palo.GOTAS);
+		Carta comodin = new Carta(NombreValor.CINCO, Palo.FLORES);
 		
 		for(int i=0;i<mano.size();i++) {
 			
 			if(mano.size() > 2) 
-			{
+			{	
+				if(mano.get(i).getNombreValor() == comodin.getNombreValor())
+				{
+					valor = 21;
+					break;
+				}
+				
 				valor += mano.get(i).getNombreValor().getValor();
 				
 			}else if(mano.size() == 2) {

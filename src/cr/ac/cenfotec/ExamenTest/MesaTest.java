@@ -216,4 +216,20 @@ public class MesaTest {
 		assertTrue(nuevaMesa.obtenerGanador().contains(nuevoJugadorII));
 		
 	}
+	
+	@Test
+	public void testComodin() throws Exception {
+
+		mano.add(new Carta(NombreValor.CINCO, Palo.ESTRELLAS));
+		mano.add(new Carta(NombreValor.DOS, Palo.ESCUDOS));
+		manoII.add(new Carta(NombreValor.DIEZ, Palo.FLORES));
+		manoII.add(new Carta(NombreValor.DIEZ, Palo.ESTRELLAS));
+		nuevoJugadorII.setMano(mano);
+		nuevoJugadorIII.setMano(manoII);
+		nuevaMesa.agregarJugadores(nuevoJugadorII);
+		nuevaMesa.agregarJugadores(nuevoJugadorIII);
+		
+		assertTrue(nuevaMesa.obtenerGanador().contains(nuevoJugadorII));
+
+	}
 }
