@@ -35,6 +35,17 @@ public class Jugador {
 		this.nombre = nombre;
 	}
 
+	public int calcularValorMano() {
+		int valor = 0;
+			for(int i=0;i<mano.size();i++) {
+				valor += mano.get(i).getNombreValor().getValor();
+			}
+		return valor;
+	}
 	
+	@Override
+	public boolean equals(Object o) {
+	    return this == o;
+	}
 	
 }

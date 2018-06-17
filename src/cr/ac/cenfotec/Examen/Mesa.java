@@ -1,6 +1,7 @@
 package cr.ac.cenfotec.Examen;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Mesa {
 	
@@ -41,11 +42,23 @@ public class Mesa {
 		}				
 	}
 	
-	public Jugador obtenerGanador() {
-		Jugador ganador = new Jugador();
-		ArrayList<Carta> mano = new ArrayList<Carta>();
+	public ArrayList<Jugador> obtenerGanador() {
+		ArrayList<Jugador> ganador = new ArrayList<Jugador>();
+		int manoJugador = 0;
+		int manoGanadora = 100;
 		
-		for (int i=0;i<jugadores.size();i++) {}
+		for (int i=0;i<jugadores.size();i++) {
+			
+			manoJugador = jugadores.get(i).calcularValorMano();
+
+			if(manoJugador < manoGanadora && manoJugador >= 0){
+				ganador = new ArrayList<Jugador>();
+				ganador.add(jugadores.get(i));
+			}else if(manoJugador == manoGanadora){
+				ganador.add(jugadores.get(i));
+			}
+		
+		}
 		
 		return ganador;
 		

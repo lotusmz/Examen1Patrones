@@ -18,6 +18,14 @@ public class Carta {
 	public Palo getPalo() {
 		return palo;
 	}
+			
+	public void setNombreValor(NombreValor nombreValor) {
+		this.nombreValor = nombreValor;
+	}
+
+	public void setPalo(Palo palo) {
+		this.palo = palo;
+	}
 
 	@Override
 	public boolean equals(Object o) {
