@@ -50,7 +50,7 @@ public class Mesa {
 		for (int i=0;i<jugadores.size();i++) {
 			
 			manoJugador = 21 - jugadores.get(i).calcularValorMano();
-
+			
 			if(manoJugador < manoGanadora && manoJugador >= 0){
 				
 				manoGanadora = manoJugador;

@@ -200,4 +200,20 @@ public class MesaTest {
 		assertEquals(false, nuevaMesa.verificarCambio(nuevaMesa.getJugadores().get(0)));
 		
 	}
+	
+	@Test
+	public void testGanadorVeintiUnoYMedio() throws Exception {
+
+		mano.add(new Carta(NombreValor.DIEZ, Palo.ESTRELLAS));
+		mano.add(new Carta(NombreValor.DOS, Palo.ESCUDOS));
+		manoII.add(new Carta(NombreValor.TRES, Palo.FLORES));
+		manoII.add(new Carta(NombreValor.DIEZ, Palo.ESTRELLAS));
+		nuevoJugadorII.setMano(mano);
+		nuevoJugadorIII.setMano(manoII);
+		nuevaMesa.agregarJugadores(nuevoJugadorII);
+		nuevaMesa.agregarJugadores(nuevoJugadorIII);
+		
+		assertTrue(nuevaMesa.obtenerGanador().contains(nuevoJugadorII));
+		
+	}
 }
