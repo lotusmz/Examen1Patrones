@@ -69,16 +69,26 @@ public class Mesa {
 	}
 	
 	public boolean verificarCambio(Jugador jugador) {
-		
+		boolean cartasCambiadas = false;
 		ArrayList<Carta> mano = jugador.getMano();
+		Carta jota = new Carta(NombreValor.JOTA, Palo.ESTRELLAS);
+		Carta quina = new Carta(NombreValor.QUINA, Palo.ESTRELLAS);
+		Carta ka = new Carta(NombreValor.KA, Palo.ESTRELLAS);
+		Carta tres = new Carta(NombreValor.TRES, Palo.ESTRELLAS);
 		
 		for(int m=0;m<mano.size();m++) {
 			
+			if(mano.get(m).getNombreValor() == jota.getNombreValor() || mano.get(m).getNombreValor() == quina.getNombreValor() || mano.get(m).getNombreValor() == ka.getNombreValor() || mano.get(m).getNombreValor() == tres.getNombreValor()) {
+								
+				mano.remove(m);
+				repartidor.darCarta(jugador);
+				cartasCambiadas = true;
 			
+			}
 			
 		}
 		
-		return true;
+		return cartasCambiadas;
 	}
 	
 	public ArrayList<Jugador> getJugadores() {

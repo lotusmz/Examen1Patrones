@@ -126,4 +126,78 @@ public class MesaTest {
 		assertTrue(mesaNueva.obtenerGanador().isEmpty());
 	}
 
+	@Test
+	public void testCambiarCartasJota() throws Exception {
+		mano = new ArrayList<Carta>();
+		carta = new Carta(NombreValor.JOTA, Palo.ESTRELLAS);
+		mano.add(carta);
+		carta = new Carta(NombreValor.DOS, Palo.ESTRELLAS);
+		mano.add(carta);
+		nuevoJugador = new Jugador();
+		nuevoJugador.setMano(mano);
+		nuevaMesa.agregarJugadores(nuevoJugador);
+
+		assertEquals(true, nuevaMesa.verificarCambio(nuevaMesa.getJugadores().get(0)));
+		assertFalse(nuevaMesa.getJugadores().get(0).getMano().get(0) == new Carta(NombreValor.JOTA, Palo.ESTRELLAS));
+	}
+	
+	@Test
+	public void testCambiarCartasQuina() throws Exception {
+		mano = new ArrayList<Carta>();
+		carta = new Carta(NombreValor.QUINA, Palo.ESTRELLAS);
+		mano.add(carta);
+		carta = new Carta(NombreValor.DOS, Palo.ESTRELLAS);
+		mano.add(carta);
+		nuevoJugador = new Jugador();
+		nuevoJugador.setMano(mano);
+		nuevaMesa.agregarJugadores(nuevoJugador);
+
+		assertEquals(true, nuevaMesa.verificarCambio(nuevaMesa.getJugadores().get(0)));
+		assertFalse(nuevaMesa.getJugadores().get(0).getMano().get(0) == new Carta(NombreValor.QUINA, Palo.ESTRELLAS));
+	}
+	
+	@Test
+	public void testCambiarCartasKa() throws Exception {
+		mano = new ArrayList<Carta>();
+		carta = new Carta(NombreValor.KA, Palo.ESTRELLAS);
+		mano.add(carta);
+		carta = new Carta(NombreValor.DOS, Palo.ESTRELLAS);
+		mano.add(carta);
+		nuevoJugador = new Jugador();
+		nuevoJugador.setMano(mano);
+		nuevaMesa.agregarJugadores(nuevoJugador);
+
+		assertEquals(true, nuevaMesa.verificarCambio(nuevaMesa.getJugadores().get(0)));
+		assertFalse(nuevaMesa.getJugadores().get(0).getMano().get(0) == new Carta(NombreValor.KA, Palo.ESTRELLAS));
+	}
+	
+	@Test
+	public void testCambiarCartasTres() throws Exception {
+		mano = new ArrayList<Carta>();
+		carta = new Carta(NombreValor.TRES, Palo.ESTRELLAS);
+		mano.add(carta);
+		carta = new Carta(NombreValor.DOS, Palo.ESTRELLAS);
+		mano.add(carta);
+		nuevoJugador = new Jugador();
+		nuevoJugador.setMano(mano);
+		nuevaMesa.agregarJugadores(nuevoJugador);
+
+		assertEquals(true, nuevaMesa.verificarCambio(nuevaMesa.getJugadores().get(0)));
+		assertFalse(nuevaMesa.getJugadores().get(0).getMano().get(0) == new Carta(NombreValor.TRES, Palo.ESTRELLAS));
+	}
+	
+	@Test
+	public void testSinCambiarCartas() throws Exception {
+		mano = new ArrayList<Carta>();
+		carta = new Carta(NombreValor.DIEZ, Palo.ESTRELLAS);
+		mano.add(carta);
+		carta = new Carta(NombreValor.DOS, Palo.ESTRELLAS);
+		mano.add(carta);
+		nuevoJugador = new Jugador();
+		nuevoJugador.setMano(mano);
+		nuevaMesa.agregarJugadores(nuevoJugador);
+
+		assertEquals(false, nuevaMesa.verificarCambio(nuevaMesa.getJugadores().get(0)));
+		
+	}
 }
